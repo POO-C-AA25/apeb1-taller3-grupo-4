@@ -1,13 +1,13 @@
 public class EjecutorInstituciones {
-    public static Instituciones institucionesX = new Instituciones();    
+    public static Instituciones InstitucionesX = new Instituciones();    
     public static void main(String[] args) {
         String nombre = null;
         String tipo = null;
-        short numAlumnos = (Math.random() * 10) + 1;
-        short numDocentes = (Math.random() * 10) + 1;
-        short numSedes = (Math.random() * 10) + 1;
-        short gastosXest = (Math.random() * 10) + 1;
-        short presupuesto = (Math.random() * 10) + 1;
+        short numAlumnos = (short) ((Math.random() * 10) + 1);
+        short numDocentes = (short) ((Math.random() * 10) + 1);
+        short numSedes = (short) ((Math.random() * 10) + 1);
+        short gastosXest = (short) ((Math.random() * 10) + 1);
+        short presupuesto = (short) ((Math.random() * 10) + 1);
         InstitucionesX.setnumAlumnos(numAlumnos);
         InstitucionesX.setnumDocentes(numDocentes);
         InstitucionesX.setSedes(numSedes);
@@ -25,6 +25,7 @@ public class EjecutorInstituciones {
             public short numSedes;
             public short gastosXest;
             public short presupuesto;
+            public short área;
             public Instituciones(){}
             public Instituciones(short numAlumnos, short numDocentes, short numSedes){
                 this.numAlumnos = numAlumnos;
@@ -37,7 +38,7 @@ public class EjecutorInstituciones {
                 public void setnumDocentes(short numDocentes){
                 this.numDocentes = numDocentes;
                 }
-                public void setValor(short numSedes){
+                public void setSedes(short numSedes){
                 this.numSedes = numSedes;
                 }
                  public short getnumAlumnos(){
@@ -48,7 +49,7 @@ public class EjecutorInstituciones {
                 }
                 public short getSedes(){
                 return this.numSedes;
-    
+                }
                 public double getGastos(){
                     return this.área;
                 }
@@ -56,10 +57,10 @@ public class EjecutorInstituciones {
                     return this.presupuesto;
                 }
                 public void calcularGastos(){
-                this.gastosXest = this.numAlumnos * this.numSedes;
+                this.gastosXest = (short) (this.numAlumnos * this.numSedes);
                 }
                 public void calcularPresupuesto(){
-                this.presupuesto = 
+                this.presupuesto = 0;
                 }
                 public String toString(){
                 return "{Cant. Alumnos: " + this.getnumAlumnos() + ", "  +
